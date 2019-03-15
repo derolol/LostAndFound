@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--测试反向解析-->
+    <a href="{% url 'lostAndFindApp:lostthing' lostthing.id %}">{{lostthing.thingName}}</a>
+</body>
+</html>

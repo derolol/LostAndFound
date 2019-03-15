@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--测试post请求-->
+    <form action="postSave/" method="post">
+        {% csrf_token %}
+        <span>物品名称</span>
+        <input type="text" name="thingName"/>
+        <br>
+
+        <span>丢失位置</span>
+        <input type="text" name="lostPosition"/>
+        <br>
+
+
+        <span>描述</span>
+        <input type="text" name="description"/>
+        <br>
+
+        <span>丢失时间</span>
+        <input type="text" name="lostTime"/>
+        <br>
+
+
+        <span>QQ</span>
+        <input type="text" name="contactByQQ"/>
+        <br>
+
+        <span>地址</span>
+        <input type="text" name="contactByAddress"/>
+        <br>
+
+
+        <span>微信</span>
+        <input type="text" name="contactByWeChat"/>
+        <br>
+
+
+        <span>邮箱</span>
+        <input type="text" name="contactByEmail"/>
+        <br>
+
+
+        <span>手机</span>
+        <input type="text" name="contactByPhone"/>
+        <br>
+
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>
+
+
