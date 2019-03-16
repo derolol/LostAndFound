@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Change</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            #con {
+                margin-top: 100px;
+            }
+
+            .navbar {
+                background-color: #d9534f;
+            }
+
+            .nav-set {
+                color: white !important;
+            }
+
+            #tool {
+                width: 80%;
+                margin: 0 auto;
+                border: solid 5px;
+                border-color: #d9534f;
+                text-align: center;
+                padding: 10px;
+            }
+
+            #information {
+                padding: 15px;
+                width: 90%;
+                border: solid 5px;
+                border-color: #d9534f;
+                margin: 0 auto;
+                margin-bottom: 50px;
+            }
+
+            #submit {
+                width: 100px;
+                background-color: #d9534f;
+                color: white;
+            }
+
+            .button-margin {
+                margin-bottom: 15px;
+            }
+
+            .label-sty {
+                width: 100%;
+                background-color: #d9534f;
+                padding: 10px;
+                color: white
+            }
+
+            .input-sty {
+                width: 100%;
+                background-color: #ffe2e1;
+                padding: 10px;
+                color: #d9534f
+            }
+
+            blockquote {
+                border-width:1px 1px 1px 5px;
+                border-color: #b82c27;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 导航 -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- 导航栏响应式布局 -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand nav-set" href="{% url 'lostAndFindApp:homepage' %}"><span class="glyphicon glyphicon-home"></span> 失物招领平台</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'lostAndFindApp:create_lost' %}" class="nav-set"><span class="glyphicon glyphicon-search"></span> 发布寻物</a></li>
+                        <li><a href="{% url 'lostAndFindApp:create_find' %}" class="nav-set"><span class="glyphicon glyphicon-heart-empty"></span> 发布招领</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="nav-set">注册</a></li>
+                    </ul>
+                    <button type="button" class="btn btn-default navbar-btn navbar-right" style="color: #d9534f">登陆</button>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="con">
+            <div class="row">
+                <!-- 左栏 -->
+                <div class="col-md-3">
+                    <div class="thumbnail" id="tool">
+                        <img src="">
+                        <div class="caption">
+                            <div id="">
+                                <h3><strong>工具栏</strong></h3>
+                            </div>
+                            <hr />
+                            <button class="btn btn-danger btn-block button-margin">信息修改</button>
+                            <button class="btn btn-danger btn-block button-margin">信息删除</button>
+                            <button class="btn btn-danger btn-block button-margin" data-toggle="modal" data-target="#contact">联系作者</button>
+                            <button class="btn btn-danger btn-block button-margin" onclick=window.location.href="{% url 'lostAndFindApp:homepage' %}">返回首页</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右栏 -->
+                <div class="col-md-9">
+                    <div class="thumbnail" id="information">
+                        <blockquote>
+                            <h2><strong>{{ define }}</strong></h2>
+                            <p> - {{ remind }}</p>
+                        </blockquote>
+                        <!-- 1.图片 2.物品描述 3.丢失地点/找点地点 4.丢失时间/找到时间 5.联系方式 -->
+                        <form>
+                            <div class="form-group">
+                                <div class="label-sty">
+                                    <label for="name"><h3><strong> // 物 品 名 称 //</strong></h3></label>
+                                </div>
+                                <div class="input-sty">
+                                    <input type="text" class="form-control " id="name" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-sty">
+                                    <label for="discribe"><h3><strong> // 物 品 简 介 //</strong></h3></label>
+                                </div>
+                                <div class="input-sty">
+                                    <textarea class="form-control" id="discribe" placeholder="Discribe" style="height: 200px"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-sty">
+                                    <label for="picture"><h3><strong> // 图 片 上 传 //</strong></h3></label>
+                                </div>
+                                <div class="input-sty">
+                                    <input type="file" id="picture">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-sty">
+                                    <label for="time"><h3><strong> // 时 间 //</strong></h3></label>
+                                </div>
+                                <div class="input-sty">
+                                    <input type="text" class="form-control" id="time">
+                                </div>
+                            </div>
+                            <div class="label-sty">
+                                <h3><strong> // 联 系 方 式 //</strong></h3>
+                            </div>
+                            <div class="input-sty container">
+                                <div class="form-group row">
+                                    <label for="phone" class="control-label col-md-2" style="text-align: right">
+                                        <h4><strong>手机 :</strong></h4>
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="tel" class="form-control" id="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="control-label col-md-2" style="text-align: right">
+                                        <h4><strong>邮箱 :</strong></h4>
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="adress" class="control-label col-md-2" style="text-align: right">
+                                        <h4><strong>住址 :</strong></h4>
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="adress">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="wechat" class="control-label col-md-2" style="text-align: right">
+                                        <h4><strong>微信 :</strong></h4>
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="wechat">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="qq" class="control-label col-md-2" style="text-align: right">
+                                        <h4><strong>Q Q :</strong></h4>
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="qq">
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <button type="submit" id="submit" class="btn btn-default">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script>
+            $("#submit").mouseover( function(){
+                $(this).css("background-color","#b82c27")
+            });
+            $("#submit").mouseout( function() {
+                $(this).css("background-color","#d9534f")
+            });
+        </script>
+    </body>
+</html>
+
