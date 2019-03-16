@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from .models import LostThingPeople, FindThingPeople
+from lostAndFindApp import models
 from django.shortcuts import render
 
 from django.http import HttpResponse
@@ -10,9 +10,34 @@ def test(request):
 
 
 def homepage(request):
-    things = LostThingPeople.objects.get(pk = 1)
-    print(things)
-    return render(request, 'homepage.html', {'lostthing': things})
+    lostthings = models.LostThingPeople.objects.all()
+    findthings = models.FindThingPeople.objects.all()
+    people = ['Dpeopeo','Ksdfsdf','Ughert','Jvsddfd','Srgsewv','Asfewgvb','Yewfweg','Cwqrqwb']
+    return render(request, 'homepage.html', { 'lostthings': lostthings, 'findthings': findthings, 'people': people })
+
+def view_lost(request, view_id):
+    lost = models.LostThingPeople.objects.get(id = view_id)
+    return render(request, 'viewlost.html', {'thing': lost})
+
+def view_find(request, view_id):
+    find = models.FindThingPeople.objects.get(id = view_id)
+    return render(request, 'viewfind.html', {'thing': find})
+
+def create_lost(request):
+    lost = {}
+    return render(request, 'createlost.html', {'define': '创建你的寻物启事', 'remind': 'Create your notice here...'})
+
+def create_find(request):
+    find = {}
+    return render(request, 'createfind.html', {'define': '创建你的失物招领', 'remind': 'Create your notice here...'})
+
+def change_lost(request, change_id):
+    lost = models.LostThingPeople.objects.get(id = change_id)
+    return render(request, 'editlost.html', {'define': '寻物启事信息修改', 'remind': 'Add your change here...', 'lost': lost})
+
+def change_find(request, change_id):
+    find = models.FindThingPeople.objects.get(id = change_id)
+    return render(request, 'editfind.html', {'define': '失物招领信息修改', 'remind': 'Add your change here...', 'find': find})
 
 def postSave(request):
     LTP = LostThingPeople.CreateLostThingPelple(request.POST.get('thingName', 'NULL'),
@@ -25,9 +50,3 @@ def postSave(request):
 
 def postTest(request):
     return render(request, "postTest.html")
-
-def lostthing(request, pkNum):
-    pkNum = int(pkNum)
-    things = LostThingPeople.objects.get(pk = pkNum)
-    print(things)
-    return render(request, 'thing.html', {'lostthing': things})
