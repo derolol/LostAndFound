@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de767001-caed-4724-9e11-38080cfa2bca" name="Default Changelist" comment="" />
+    <list default="true" id="de767001-caed-4724-9e11-38080cfa2bca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createfind.html" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createfind.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createlost.html" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createlost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editfind.html" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editfind.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editlost.html" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editlost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,38 +22,43 @@
     <session id="-1038716523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.114" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="5" />
-          <entry key="py" value="26" />
+          <entry key="html" value="19" />
+          <entry key="py" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="5" />
-          <entry key="Python" value="26" />
+          <entry key="HTML" value="19" />
+          <entry key="Python" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="750" />
-          <entry key="py" value="2564" />
+          <entry key="html" value="860" />
+          <entry key="py" value="3259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="750" />
-          <entry key="Python" value="2564" />
+          <entry key="HTML" value="860" />
+          <entry key="Python" value="3259" />
         </counts>
       </usages-collector>
     </session>
@@ -51,16 +66,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/models.py">
+        <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state relative-caret-position="692">
+              <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
-                <marker date="1552649069997" expanded="true" signature="224:301" ph="..." />
-                <marker date="1552649069997" expanded="true" signature="1198:1546" ph="..." />
-                <marker date="1552649069997" expanded="true" signature="1632:1638" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editfind.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2976">
+              <caret line="124" column="44" lean-forward="true" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editlost.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="117" column="60" lean-forward="true" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -75,6 +114,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&lt;form</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -84,21 +131,26 @@
         <option value="$PROJECT_DIR$/lostandfind/templates/postTest.py" />
         <option value="$PROJECT_DIR$/lostandfind/templates/good.html" />
         <option value="$PROJECT_DIR$/lostandfind/manage.py" />
-        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py" />
-        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py" />
         <option value="$PROJECT_DIR$/lostandfind/templates/homepage.html" />
         <option value="$PROJECT_DIR$/lostandfind/templates/postTest.html" />
         <option value="$PROJECT_DIR$/lostandfind/templates/thing.html" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createlost.html" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createfind.html" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editlost.html" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editfind.html" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py" />
         <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/models.py" />
+        <option value="$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="160" />
-    <option name="y" value="48" />
-    <option name="width" value="703" />
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="693" />
     <option name="height" value="533" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -120,19 +172,14 @@
               <item name="djangoproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="djangoproject" type="462c0819:PsiDirectoryNode" />
               <item name="lostandfind" type="462c0819:PsiDirectoryNode" />
-              <item name="lostandfind" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djangoproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangoproject" type="462c0819:PsiDirectoryNode" />
-              <item name="lostandfind" type="462c0819:PsiDirectoryNode" />
               <item name="lostAndFindApp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="djangoproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="djangoproject" type="462c0819:PsiDirectoryNode" />
               <item name="lostandfind" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="lostAndFindApp" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -193,7 +240,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.6699438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27347162" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -202,7 +249,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -213,13 +260,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lostandfind/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -228,13 +268,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lostandfind/templates/postTest.py" />
-    <entry file="file://$PROJECT_DIR$/lostandfind/lostandfind/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lostandfind/lostandfind/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -252,61 +285,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py">
+    <entry file="file://$PROJECT_DIR$/lostandfind/templates/postTest.html" />
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/templates/createlost.html" />
+    <entry file="file://$PROJECT_DIR$/lostandfind/templates/test.html" />
+    <entry file="file://$PROJECT_DIR$/lostandfind/templates/thing.html" />
+    <entry file="file://$PROJECT_DIR$/lostandfind/templates/homepage.html" />
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-            <marker date="1552647374898" expanded="true" signature="235:236" ph="..." />
-            <marker date="1552647374898" expanded="true" signature="366:371" ph="..." />
-            <marker date="1552647374898" expanded="true" signature="366:435" ph="..." />
-            <marker date="1552647374898" expanded="true" signature="968:973" ph="..." />
-            <marker date="1552647374898" expanded="true" signature="1067:1072" ph="..." />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="148" column="43" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lostandfind/templates/thing.html">
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostandfind/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="408">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lostandfind/templates/homepage.html">
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/thing.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createfind.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="430">
+          <caret line="125" column="52" lean-forward="true" selection-start-line="125" selection-start-column="52" selection-end-line="125" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py">
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/createlost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="741">
+          <caret line="124" column="44" lean-forward="true" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lostandfind/templates/postTest.html">
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/viewfind.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="2856">
+          <caret line="119" column="50" selection-start-line="119" selection-start-column="50" selection-end-line="119" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/viewlost.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editfind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2976">
+          <caret line="124" column="44" lean-forward="true" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/editlost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="117" column="60" lean-forward="true" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        <state relative-caret-position="668">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/templates/postTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lostandfind/lostAndFindApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1552649069997" expanded="true" signature="224:301" ph="..." />
-            <marker date="1552649069997" expanded="true" signature="1198:1546" ph="..." />
-            <marker date="1552649069997" expanded="true" signature="1632:1638" ph="..." />
           </folding>
         </state>
       </provider>

@@ -4,6 +4,7 @@ from lostAndFindApp import models
 from django.shortcuts import render
 
 from django.http import HttpResponse
+
 # Create your views here.
 def test(request):
     return HttpResponse('Hello world')
@@ -39,14 +40,54 @@ def change_find(request, change_id):
     find = models.FindThingPeople.objects.get(id = change_id)
     return render(request, 'editfind.html', {'define': '失物招领信息修改', 'remind': 'Add your change here...', 'find': find})
 
-def postSave(request):
-    LTP = LostThingPeople.CreateLostThingPelple(request.POST.get('thingName', 'NULL'),
+def createLostPostSave(request):
+    LTP = models.LostThingPeople.CreateLostThingPelple(request.POST.get('thingName', 'NULL'),
     request.POST.get('lostPosition', 'NULL'), request.POST.get('description', 'NULL'), request.POST.get('lostTime', 'NULL'),
-    request.POST.get('contactByQQ', 'NULL'),request.POST.get(' contactByAddress', 'NULL'),request.POST.get('contactByWeChat', 'NULL'),
+    request.POST.get('contactByQQ', 'NULL'),request.POST.get('contactByAddress', 'NULL'),request.POST.get('contactByWeChat', 'NULL'),
     request.POST.get('contactByEmail', 'NULL'),request.POST.get('contactByPhone', 'NULL'),)
     LTP.save()
 
-    return HttpResponse("保存成功")
+    return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+
+def createFindPostSave(request):
+    FTP = models.FindThingPeople.CreateFindThingPelple(request.POST.get('thingName', 'NULL'),
+    request.POST.get('findPosition', 'NULL'), request.POST.get('description', 'NULL'), request.POST.get('findTime', 'NULL'),
+    request.POST.get('contactByQQ', 'NULL'),request.POST.get('contactByAddress', 'NULL'),request.POST.get('contactByWeChat', 'NULL'),
+    request.POST.get('contactByEmail', 'NULL'),request.POST.get('contactByPhone', 'NULL'),)
+    FTP.save()
+
+    return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+
+def change_lost_save(request, change_id):
+    LTP = models.LostThingPeople.objects.get(id = change_id)
+
+    attributeList = ["thingName", "lostPosition", "description", "lostTime", "contactByQQ",
+            "contactByAddress", "contactByWeChat", "contactByEmail", "contactByPhone"]
+    for key in attributeList:
+        keyValue =  request.POST.get(key, "NULL")
+        if keyValue == "NULL":
+            continue
+        else:
+            setattr(LTP, key, keyValue)
+
+    LTP.save()
+    return HttpResponse("修改成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+
+def change_find_save(request, change_id):
+    FTP = models.FindThingPeople.objects.get(id = change_id)
+
+    attributeList = ["thingName", "findPosition", "description", "findTime", "contactByQQ",
+            "contactByAddress", "contactByWeChat", "contactByEmail", "contactByPhone"]
+    for key in attributeList:
+        keyValue =  request.POST.get(key, "NULL")
+        if keyValue == "NULL":
+            continue
+        else:
+            setattr(FTP, key, keyValue)
+
+    FTP.save()
+    return HttpResponse("修改成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+
 
 def postTest(request):
     return render(request, "postTest.html")

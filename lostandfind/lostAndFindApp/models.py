@@ -41,10 +41,10 @@ class FindThingPeople(models.Model):
     contactByPhone   = models.CharField(max_length = 20, default = 'NULL')#通过手机号联系
 
     @classmethod
-    def CreateFindThingPelple(cls, thingName='NULL', FindPosition='NULL', description='NULL', FTime='NULL', contactByQQ='NULL',
+    def CreateFindThingPelple(cls, thingName='NULL', findPosition='NULL', description='NULL', findTime='NULL', contactByQQ='NULL',
     contactByAddress='NULL', contactByWeChat='NULL', contactByEmail='NULL', contactByPhone='NULL'):
-        FTP = cls(thingName=thingName, FPosition=FPosition, description=description,
-                  FTime=FTime, contactByQQ=contactByQQ, contactByAddress=contactByAddress,
+        FTP = cls(thingName=thingName, findPosition=findPosition, description=description,
+                  findTime=findTime, contactByQQ=contactByQQ, contactByAddress=contactByAddress,
                   contactByWeChat=contactByWeChat, contactByEmail=contactByEmail, contactByPhone=contactByPhone)#lTP lostThingPeople缩写
         return FTP
 

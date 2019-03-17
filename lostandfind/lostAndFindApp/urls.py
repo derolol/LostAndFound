@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.homepage, name='homepage'),
     url(r'^homepage$', views.homepage, name='homepage'),
     url(r'^view/lost/(?P<view_id>[0-9]+)/$', views.view_lost, name='view_lost'),
     url(r'^view/find/(?P<view_id>[0-9]+)/$', views.view_find, name='view_find'),
@@ -12,7 +13,11 @@ urlpatterns = [
     url(r'^change/lost/(?P<change_id>[0-9]+)/$', views.change_lost, name='change_lost'),
     url(r'^change/find/(?P<change_id>[0-9]+)/$', views.change_find, name='change_find'),
     url(r'^postTest/$', views.postTest),
-    url(r'^postTest/postSave/$', views.postSave),
+    url(r'^createLostPostSave/$', views.createLostPostSave, name='createLostPostSave'),
+    url(r'^createFindPostSave/$', views.createFindPostSave, name='createFindPostSave'),
+    url(r'^change/lost/save/(?P<change_id>[0-9]+)/$', views.change_lost_save, name='change_lost_save'),
+    url(r'^change/find/save/(?P<change_id>[0-9]+)/$', views.change_find_save, name='change_find_save'),
+
 ]
 
 app_name = 'lostAndFindApp'

@@ -121,13 +121,14 @@
                             <p> - {{ remind }}</p>
                         </blockquote>
                         <!-- 1.图片 2.物品描述 3.丢失地点/找点地点 4.丢失时间/找到时间 5.联系方式 -->
-                        <form  action="{% url 'lostAndFindApp:create_action' %}" method="POST">
+                        <form  action="{% url 'lostAndFindApp:createFindPostSave' %}" method="POST">
+                            {% csrf_token %}
                             <div class="form-group">
                                 <div class="label-sty">
                                     <label for="name"><h3><strong> // 物 品 名 称 //</strong></h3></label>
                                 </div>
                                 <div class="input-sty">
-                                    <input type="text" class="form-control " id="name" placeholder="Name">
+                                    <input type="text" class="form-control " id="name" placeholder="Name" name="thingName">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -135,7 +136,7 @@
                                     <label for="discribe"><h3><strong> // 物 品 简 介 //</strong></h3></label>
                                 </div>
                                 <div class="input-sty">
-                                    <textarea class="form-control" id="discribe" placeholder="Discribe" style="height: 200px"></textarea>
+                                    <textarea class="form-control" id="discribe" placeholder="Discribe" style="height: 200px" name="description"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -151,7 +152,7 @@
                                     <label for="time"><h3><strong> // 时 间 //</strong></h3></label>
                                 </div>
                                 <div class="input-sty">
-                                    <input type="text" class="form-control" id="time">
+                                    <input type="text" class="form-control" id="time" name="findTime">
                                 </div>
                             </div>
                             <div class="label-sty">
@@ -163,7 +164,7 @@
                                         <h4><strong>手机 :</strong></h4>
                                     </label>
                                     <div class="col-md-10">
-                                        <input type="tel" class="form-control" id="phone">
+                                        <input type="tel" class="form-control" id="phone" name="contactByPhone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -171,7 +172,7 @@
                                         <h4><strong>邮箱 :</strong></h4>
                                     </label>
                                     <div class="col-md-10">
-                                        <input type="email" class="form-control" id="email">
+                                        <input type="email" class="form-control" id="email" name="contactByEmail">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -179,7 +180,7 @@
                                         <h4><strong>住址 :</strong></h4>
                                     </label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="adress">
+                                        <input type="text" class="form-control" id="adress" name="contactByAddress">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -187,7 +188,7 @@
                                         <h4><strong>微信 :</strong></h4>
                                     </label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="wechat">
+                                        <input type="text" class="form-control" id="wechat" name="contactByWeChat">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -195,7 +196,7 @@
                                         <h4><strong>Q Q :</strong></h4>
                                     </label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qq">
+                                        <input type="text" class="form-control" id="qq" name="contactByQQ">
                                     </div>
                                 </div>
                             </div>
