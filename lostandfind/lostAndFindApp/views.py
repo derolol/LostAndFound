@@ -61,6 +61,7 @@ def createFindPostSave(request):
 def change_lost_save(request, change_id):
     LTP = models.LostThingPeople.objects.get(id = change_id)
 
+
     attributeList = ["thingName", "lostPosition", "description", "lostTime", "contactByQQ",
             "contactByAddress", "contactByWeChat", "contactByEmail", "contactByPhone"]
     for key in attributeList:
