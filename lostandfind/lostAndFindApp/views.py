@@ -5,10 +5,10 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+
 # Create your views here.
 def test(request):
-    return HttpResponse('Hello world')
-
+    return render(request, 'test.html')
 
 def homepage(request):
     lostthings = models.LostThingPeople.objects.all()
@@ -41,19 +41,44 @@ def change_find(request, change_id):
     return render(request, 'editfind.html', {'define': '失物招领信息修改', 'remind': 'Add your change here...', 'find': find})
 
 def createLostPostSave(request):
-    LTP = models.LostThingPeople.CreateLostThingPelple(request.POST.get('thingName', 'NULL'),
-    request.POST.get('lostPosition', 'NULL'), request.POST.get('description', 'NULL'), request.POST.get('lostTime', 'NULL'),
-    request.POST.get('contactByQQ', 'NULL'),request.POST.get('contactByAddress', 'NULL'),request.POST.get('contactByWeChat', 'NULL'),
-    request.POST.get('contactByEmail', 'NULL'),request.POST.get('contactByPhone', 'NULL'),)
+    LTP = models.LostThingPeople.CreateLostThingPelple(request.POST.get('thingName', ''),
+                                                       request.POST.get('lostPosition', ''),
+                                                       request.POST.get('description', ''),
+                                                       request.POST.get('lostTime', ''),
+                                                       request.POST.get('contactByQQ', ''),
+                                                       request.POST.get('contactByAddress', ''),
+                                                       request.POST.get('contactByWeChat', ''),
+                                                       request.POST.get('contactByEmail', ''),
+                                                       request.POST.get('contactByPhone', ''),
+                                                       request.FILES.get('img'))
+
+    # 原先打算数据库直接存图片保存位置的，但与模型不一样就放弃的
+    # imgNameNum = models.LostThingPeople.objects.latest().id# 不确定是不是对的 todo:待测试
+    #
+    # #存图片
+    # if request.method == "POST":
+    #     fileData = request.FILES["img"]
+    #     fileDataNameSuffix = fileData.name.spit(".", 1)[1]#获取图片的后缀可能图片名中不只有一个 . 就会出问题， 暂时不管
+    #     filePath = os.path.join("static/upfile", imgNameNum + fileDataNameSuffix)
+    #     with open(filePath, "wb") as f:
+    #         for info in f.chunks():
+    #             f.write(info)
+    #     #LTP.img = filePath 这么弄应该是错的, 保存路径的话直接弄成存字符串就行了,
+
     LTP.save()
 
     return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
 
-def createFindPostSave(request):
-    FTP = models.FindThingPeople.CreateFindThingPelple(request.POST.get('thingName', 'NULL'),
-    request.POST.get('findPosition', 'NULL'), request.POST.get('description', 'NULL'), request.POST.get('findTime', 'NULL'),
-    request.POST.get('contactByQQ', 'NULL'),request.POST.get('contactByAddress', 'NULL'),request.POST.get('contactByWeChat', 'NULL'),
-    request.POST.get('contactByEmail', 'NULL'),request.POST.get('contactByPhone', 'NULL'),)
+def createFindPostSave(request):# todo:这个图片上传还没写
+    FTP = models.FindThingPeople.CreateFindThingPelple(request.POST.get('thingName', ''),
+                                                       request.POST.get('findPosition', ''),
+                                                       request.POST.get('description', ''),
+                                                       request.POST.get('findTime', ''),
+                                                       request.POST.get('contactByQQ', ''),
+                                                       request.POST.get('contactByAddress', ''),
+                                                       request.POST.get('contactByWeChat', ''),
+                                                       request.POST.get('contactByEmail', ''),
+                                                       request.POST.get('contactByPhone', ''),)
     FTP.save()
 
     return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页

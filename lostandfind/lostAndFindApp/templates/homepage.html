@@ -94,7 +94,9 @@
                         {% for lostthing in lostthings %}
                         <div class="col-md-6">
                             <div class="thumbnail thumsty">
-                                <img src="">
+                                {% if lostthing.img %}
+                                     <img src = "{{ lostthing.img.url|default_if_none:'#' }}" alt="图片打开失败"> <!--图片显示-->
+                                {% endif %}
                                 <div class="caption">
                                     <h3>{{ lostthing.thingName }}</h3>
                                     <div class="cut">
@@ -120,7 +122,10 @@
                         {% for findthing in findthings %}
                         <div class="col-md-6">
                             <div class="thumbnail thumsty">
-                                <img src="">
+                                {% if findthing.img %}
+                                     <img src = "{{ findthing.img.url|default_if_none:'#' }}" alt="图片打开失败"> <!--图片显示-->
+                                {% endif %}
+
                                 <div class="caption">
                                     <h3>{{ findthing.thingName }}</h3>
                                     <div class="cut">

@@ -1,6 +1,8 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -17,7 +19,8 @@ urlpatterns = [
     url(r'^createFindPostSave/$', views.createFindPostSave, name='createFindPostSave'),
     url(r'^change/lost/save/(?P<change_id>[0-9]+)/$', views.change_lost_save, name='change_lost_save'),
     url(r'^change/find/save/(?P<change_id>[0-9]+)/$', views.change_find_save, name='change_find_save'),
+    url(r'^test/$', views.test),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 app_name = 'lostAndFindApp'

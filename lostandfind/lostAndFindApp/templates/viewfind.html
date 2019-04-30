@@ -136,7 +136,9 @@
                         <p>地点: {{ thing.findPosition }}</p>
                         <!-- 物品照片 -->
                         <p>图片:</p>
-                        <img src="">
+                        {% if thing.img %}
+                            <img src = "{{ thing.img.url|default_if_none:'#' }}" alt="图片打开失败"> <!--图片显示-->
+                        {% endif %}
                     </div>
                 </div>
             </div>
