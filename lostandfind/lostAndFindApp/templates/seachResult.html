@@ -40,41 +40,14 @@
             margin-bottom: 20px;
         }
 
-        #notice-title {
-            margin-top: 0;
-            background-color: #d9534f;
-            color: white;
-            text-align: center;
-        }
-
-        #notice {
-            width: 90%;
-            border: solid 5px;
-            border-color: #d9534f;
-            position: absolute;
-        }
-
         blockquote {
             border-width: 1px 1px 1px 5px;
             border-color: #b82c27;
         }
 
-        #search-box {
-            margin-left: 2px;
-            margin-bottom: 40px;
-        }
-
-        #search {
-            font-size: 14px;
-            background-color: #d9534f;
-            border-color: #d9534f;
-            color: white;
-        }
-
-        #search-input {
-            height: 40px;
-            border-color: #d9534f;
-            width: 600px;
+        #result {
+            margin-left: 20px;
+            margin-bottom: 50px;
         }
     </style>
 </head>
@@ -112,18 +85,12 @@
     </nav>
     <div class="container-fluid" id="con">
         <!-- 搜索框 -->
-        <div class="row" id="search-box">
-            <blockquote>
-                <p>搜索</p>
-            </blockquote>
-            <div class="input-group">
-                <span class="input-group-addon" id="search"> 搜索 </span>
-                <input id="search-input" type="text" class="form-control">
-            </div>
+        <div class="row" id="result">
+            <h1><strong>搜索结果</strong></h1>
         </div>
         <div class="row">
             <!-- 左栏 -->
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <blockquote>
                     <p>寻物启事</p>
                     <footer>Have you found the thing in the list...</footer>
@@ -154,7 +121,7 @@
             </div>
 
             <!-- 右栏 -->
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <blockquote>
                     <p>失物招领</p>
                     <footer>Have you found your thing in the list...</footer>
@@ -183,26 +150,6 @@
                     {% endfor %}
                 </div>
             </div>
-
-            <!-- 热心榜 -->
-            <div class="col-md-2">
-                <div class="thumbnail" id="notice">
-                    <img src="">
-                    <div class="caption">
-                        <div id="notice-title">
-                            <h3>热心榜</h3>
-                        </div>
-                        <hr />
-                        <ol>
-                            {% for p in people %}
-                            <li>
-                                <p>{{ p }}</p>
-                            </li>
-                            {% endfor %}
-                        </ol>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -221,28 +168,6 @@
         $(".thumsty").mouseout(function () {
             $(this).css("box-shadow", "0px 0px 0px")
         })
-
-        // 使热心榜随版面移动
-        window.onscroll = function () {
-            var notice = document.getElementById("notice");
-            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            startmove(parseInt((document.documentElement.clientHeight - notice.offsetHeight) / 6 + scrollTop))
-        };
-        var timer = null;
-        function startmove(iTarget) {
-            var notice = document.getElementById('notice');
-            clearInterval(timer);
-            timer = setInterval(function () {
-                var speed = (iTarget - notice.offsetTop) / 4;
-                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-                if (notice.offsetTop == iTarget) {
-                    clearInterval(timer);
-                }
-                else {
-                    notice.style.top = notice.offsetTop + speed + 'px';
-                }
-            }, 30)
-        }
     </script>
 </body>
 

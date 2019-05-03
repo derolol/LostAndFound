@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="5;url={% url 'lostAndFindApp:homepage' %}">
+        <title>Success</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            #con {
+                margin-top: 100px;
+            }
+
+            .thumsty {
+                margin: 0 auto;
+                margin-bottom: 20px;
+                width: 60%;
+                background-color: #fde6e6;
+                border: 0;
+                padding: 20px;
+                padding-bottom: 30px;
+                text-align:center;
+            }
+            
+            .navbar {
+                background-color: #d9534f;
+            }
+
+            .nav-set {
+                color: white !important;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 导航 -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- 导航栏响应式布局 -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand nav-set" href="{% url 'lostAndFindApp:homepage' %}"><span class="glyphicon glyphicon-home"></span> 失物招领平台</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'lostAndFindApp:create_lost' %}" class="nav-set"><span class="glyphicon glyphicon-search"></span> 发布寻物</a></li>
+                        <li><a href="{% url 'lostAndFindApp:create_find' %}" class="nav-set"><span class="glyphicon glyphicon-heart-empty"></span> 发布招领</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="nav-set">注册</a></li>
+                    </ul>
+                    <button type="button" class="btn btn-default navbar-btn navbar-right" style="color: #d9534f">登陆</button>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="con">
+            <div class="thumbnail thumsty">
+                <h1><strong>提示</strong></h1>
+                <h3>保存成功</h3>
+                <p>- 将于<span id="count">5</span>s后跳转到首页 -</p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                var temp = 5;
+                setInterval(function () {
+                if (temp != 0) {
+                    temp--;
+                        document.getElementById("count").innerHTML = temp;
+                    }
+                },1000);
+            })
+        </script>
+    </body>
+</html>
+
+

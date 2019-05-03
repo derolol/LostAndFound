@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 from lostAndFindApp import models
 from django.shortcuts import render
-
 from django.http import HttpResponse
-
+from django.template import loader
+import os
 
 # Create your views here.
 def test(request):
@@ -50,24 +50,25 @@ def createLostPostSave(request):
                                                        request.POST.get('contactByWeChat', ''),
                                                        request.POST.get('contactByEmail', ''),
                                                        request.POST.get('contactByPhone', ''),
-                                                       request.FILES.get('img'))
-
-    # 原先打算数据库直接存图片保存位置的，但与模型不一样就放弃的
-    # imgNameNum = models.LostThingPeople.objects.latest().id# 不确定是不是对的 todo:待测试
-    #
-    # #存图片
+                                                       request.POST.get('img'))
+    LTP.save()                  
+    # # 原先打算数据库直接存图片保存位置的，但与模型不一样就放弃的
+    # imgNameNum = str(LTP.id)
+    # # 不确定是不是对的 todo:待测试
+    # print(imgNameNum)
+    # #
+    # # #存图片
     # if request.method == "POST":
     #     fileData = request.FILES["img"]
-    #     fileDataNameSuffix = fileData.name.spit(".", 1)[1]#获取图片的后缀可能图片名中不只有一个 . 就会出问题， 暂时不管
-    #     filePath = os.path.join("static/upfile", imgNameNum + fileDataNameSuffix)
+    #     fileDataNameSuffix = fileData.name.split(".", 1)[1]#获取图片的后缀可能图片名中不只有一个 . 就会出问题， 暂时不管
+    #     filePath = os.path.join("static/upfile", imgNameNum + "." + fileDataNameSuffix)
+    #     print (filePath)
     #     with open(filePath, "wb") as f:
     #         for info in f.chunks():
     #             f.write(info)
     #     #LTP.img = filePath 这么弄应该是错的, 保存路径的话直接弄成存字符串就行了,
 
-    LTP.save()
-
-    return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+    return HttpResponse(render(request, "success.html"))#todo:跳到某个保存成功的提示页面，在自动跳转到主页
 
 def createFindPostSave(request):# todo:这个图片上传还没写
     FTP = models.FindThingPeople.CreateFindThingPelple(request.POST.get('thingName', ''),
@@ -78,10 +79,11 @@ def createFindPostSave(request):# todo:这个图片上传还没写
                                                        request.POST.get('contactByAddress', ''),
                                                        request.POST.get('contactByWeChat', ''),
                                                        request.POST.get('contactByEmail', ''),
-                                                       request.POST.get('contactByPhone', ''),)
+                                                       request.POST.get('contactByPhone', ''),
+                                                       request.FILES.get('img'))
     FTP.save()
 
-    return HttpResponse("保存成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+    return HttpResponse(render(request, "success.html"))#todo:跳到某个保存成功的提示页面，在自动跳转到主页
 
 def change_lost_save(request, change_id):
     LTP = models.LostThingPeople.objects.get(id = change_id)
@@ -95,9 +97,9 @@ def change_lost_save(request, change_id):
             continue
         else:
             setattr(LTP, key, keyValue)
-
+    setattr(LTP, 'img', request.FILES.get('img'))
     LTP.save()
-    return HttpResponse("修改成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+    return HttpResponse(render(request, "success.html"))#todo:跳到某个保存成功的提示页面，在自动跳转到主页
 
 def change_find_save(request, change_id):
     FTP = models.FindThingPeople.objects.get(id = change_id)
@@ -110,9 +112,10 @@ def change_find_save(request, change_id):
             continue
         else:
             setattr(FTP, key, keyValue)
-
+    setattr(FTP, 'img', request.FILES.get('img'))
     FTP.save()
-    return HttpResponse("修改成功")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
+    return HttpResponse(render(request, "success.html"))
+    # return HttpResponse("success.html")#todo:跳到某个保存成功的提示页面，在自动跳转到主页
 
 
 def postTest(request):
