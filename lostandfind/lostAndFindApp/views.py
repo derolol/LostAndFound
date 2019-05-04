@@ -4,7 +4,7 @@ from lostAndFindApp import models
 from django.shortcuts import render
 
 from django.http import HttpResponse
-
+from django.db.models import Q
 
 # Create your views here.
 def test(request):
@@ -117,3 +117,16 @@ def change_find_save(request, change_id):
 
 def postTest(request):
     return render(request, "postTest.html")
+
+def searchTest(request):
+    return render(request, "searchTest.html")
+
+def searchResult(request):
+    search_keywords = request.POST.get("keywords", "")
+    LTPAll = models.LostThingPeople.objects.all().filter(Q(thingName__icontains=search_keywords) | Q(description__icontains=search_keywords))
+    FTPAll = models.FindThingPeople.objects.all().filter(Q(thingName__icontains=search_keywords) | Q(description__icontains=search_keywords))
+
+    # print(LTPAll)#测试用
+    # print(FTPAll)#测试用
+
+    return render(request, "searchResult.html", {"LTPSearch": LTPAll, "FTPSearch": FTPAll})#todo:返回页面需要写一个来展示

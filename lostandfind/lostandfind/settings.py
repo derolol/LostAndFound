@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lostAndFindApp',
+    # 'xadmin',
+    # 'crispy_forms',
+    # 'reversion',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +135,10 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 MEDIA_URL = '/media/'
+
+
+GITHUB_AUTHORIZE_URL = 'https://github.com/login/oauth/authorize'
+GITHUB_CLIENTID = 'd0cdfb72b5ef9006fc53'
+GITHUB_CLIENTSECRET = '63804afd2e2d78249b0e9314b1d3bb32142e494d'
+GITHUB_CALLBACK = 'http://localhost:8000/oauth/github/'
 

@@ -37,15 +37,15 @@ class LostThingPeople(models.Model):
 
 class FindThingPeople(models.Model):
     img          = models.ImageField(upload_to='upfile')# 图片路径
-    thingName    = models.CharField(max_length = 30, default = 'NULL')#物品名称
-    findPosition = models.CharField(max_length = 50, default = 'NULL')#丢失地点
-    description  = models.CharField(max_length = 200, default = 'NULL')#物品描述
-    findTime     = models.CharField(max_length = 40, default = 'NULL')#丢失时间
-    contactByQQ  = models.CharField(max_length = 20, default = 'NULL')#QQ联系方式
-    contactByAddress = models.CharField(max_length = 40, default = 'NULL')#通过地址联系
-    contactByWeChat  = models.CharField(max_length = 50, default = 'NULL')#通过微信联系
-    contactByEmail   = models.CharField(max_length = 50, default = 'NULL')#通过邮箱联系
-    contactByPhone   = models.CharField(max_length = 20, default = 'NULL')#通过手机号联系
+    thingName    = models.CharField(max_length = 30, default = '')#物品名称
+    findPosition = models.CharField(max_length = 50, default = '')#丢失地点
+    description  = models.CharField(max_length = 200, default = '')#物品描述
+    findTime     = models.CharField(max_length = 40, default = '')#丢失时间
+    contactByQQ  = models.CharField(max_length = 20, default = '')#QQ联系方式
+    contactByAddress = models.CharField(max_length = 40, default = '')#通过地址联系
+    contactByWeChat  = models.CharField(max_length = 50, default = '')#通过微信联系
+    contactByEmail   = models.CharField(max_length = 50, default = '')#通过邮箱联系
+    contactByPhone   = models.CharField(max_length = 20, default = '')#通过手机号联系
 
     @classmethod
     def CreateFindThingPelple(cls, thingName='', findPosition='', description='', findTime='', contactByQQ='',

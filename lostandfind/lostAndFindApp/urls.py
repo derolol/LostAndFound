@@ -20,6 +20,12 @@ urlpatterns = [
     url(r'^change/lost/save/(?P<change_id>[0-9]+)/$', views.change_lost_save, name='change_lost_save'),
     url(r'^change/find/save/(?P<change_id>[0-9]+)/$', views.change_find_save, name='change_find_save'),
     url(r'^test/$', views.test),
+    url(r'^searchTest/$', views.searchTest),
+    url(r'^searchResult/$', views.searchResult),
+
+
+    # url(r'github/$', views.github_auth, name='github_oauth'),
+    # url(r'github_login/$', views.githhub_login, name='github_login'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
