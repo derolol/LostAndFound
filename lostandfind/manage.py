@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 import os
 import sys

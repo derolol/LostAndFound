@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "lostandfind",
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'000624',
         'HOST':'localhost',
         'PORT':'3306',
     }
