@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 class LostThingPeople(models.Model):
-    img          = models.ImageField(upload_to='upfile')# 图片路径
+    img          = models.ImageField(upload_to = 'upfile')# 图片路径
     thingName    = models.CharField(max_length = 30, default = '')# 物品名称
     lostPosition = models.CharField(max_length = 50, default = '')# 丢失地点
     description  = models.CharField(max_length = 200, default = '')# 物品描述
@@ -46,6 +46,7 @@ class FindThingPeople(models.Model):
     contactByWeChat  = models.CharField(max_length = 50, default = '')#通过微信联系
     contactByEmail   = models.CharField(max_length = 50, default = '')#通过邮箱联系
     contactByPhone   = models.CharField(max_length = 20, default = '')#通过手机号联系
+
 
     @classmethod
     def CreateFindThingPelple(cls, thingName='', findPosition='', description='', findTime='', contactByQQ='',
