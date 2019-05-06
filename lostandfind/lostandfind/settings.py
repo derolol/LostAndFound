@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lostAndFindApp',
-    # 'xadmin',
-    # 'crispy_forms',
+    'xadmin',
+    'crispy_forms',
     # 'reversion',
 ]
 

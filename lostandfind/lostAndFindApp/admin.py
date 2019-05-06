@@ -1,3 +1,4 @@
+'''
 from django.contrib import admin
 from . import models
 
@@ -12,3 +13,4 @@ class LTPAdmin(admin.ModelAdmin):
     list_display = ('thingName', 'lostPosition', 'description', 'lostTime', 'contactByQQ', 'contactByAddress','contactByWeChat', 'contactByEmail', 'contactByPhone', 'img')
 
 admin.site.register(models.LostThingPeople, LTPAdmin)
+'''
